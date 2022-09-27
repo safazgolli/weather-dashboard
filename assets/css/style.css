@@ -1,0 +1,14 @@
+.jumbotron  {
+    background-image: linear-gradient(to right, rgb(60, 106, 198) , rgb(8, 25, 67));
+  }
+ 
+h1{
+    text-align: center;
+
+}  
+
+#weather-container{
+
+    border: 5px black;
+    border-radius: 5px;
+}
