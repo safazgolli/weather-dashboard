@@ -32,5 +32,10 @@ p{
 }
 .image-size{
 
-    size: 1000px ;
+    size: 100px ;
+}
+ul{
+    list-style-type: none;
+    font-size: 12px;
+    text-align: left;
 }

@@ -157,9 +157,9 @@ function getForecast(weatherData){
          let iconUrl1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
          
           $("#date1").text(today.format("MMM Do, YYYY"));
-          tempDay1.innerHTML='Temp: ' + day1Temperature;
+          tempDay1.innerHTML='Temp: ' + day1Temperature + ' Celsuis';
            cityIcon1.setAttribute("src", iconUrl1);
-          windDay1.innerHTML='Wind Speed: ' + day1Windspeed;
+          windDay1.innerHTML='Wind: ' + day1Windspeed + ' mph';
           HumidDay1.innerHTML='Humidity: ' + day1Humidity + '%';
 // day 2 
 
@@ -170,9 +170,9 @@ function getForecast(weatherData){
          let iconUrl2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
           
          $("#date2").text(today.add(1, 'days').format("MMM Do, YYYY")); 
-         tempDay2.innerHTML='Temp: ' + day2Temperature;
+         tempDay2.innerHTML='Temp: ' + day2Temperature + ' Celsuis';
           cityIcon2.setAttribute("src", iconUrl2);
-          windDay2.innerHTML='Wind Speed: ' + day2Windspeed;
+          windDay2.innerHTML='Wind: ' + day2Windspeed + ' mph';
           HumidDay2.innerHTML='Humidity: ' + day2Humidity + '%';
 
 // day 3
@@ -183,9 +183,9 @@ function getForecast(weatherData){
         let iconUrl3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
         
         $("#date3").text(today.add(2, 'days').format("MMM Do, YYYY"));   
-        tempDay3.innerHTML='Temp: ' + day3Temperature;
+        tempDay3.innerHTML='Temp: ' + day3Temperature + ' Celsuis';
           cityIcon3.setAttribute("src", iconUrl3);
-          windDay3.innerHTML='Wind Speed: ' + day3Windspeed;
+          windDay3.innerHTML='Wind: ' + day3Windspeed + ' mph';
           HumidDay3.innerHTML='Humidity: ' + day3Humidity + '%';
 
 //day 4
@@ -196,9 +196,9 @@ function getForecast(weatherData){
       let iconUrl4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
         
       $("#date4").text(today.add(3, 'days').format("MMM Do, YYYY"));     
-      tempDay4.innerHTML='Temp: ' + day4Temperature;
+      tempDay4.innerHTML='Temp: ' + day4Temperature + ' Celsuis';
           cityIcon4.setAttribute("src", iconUrl4);
-          windDay4.innerHTML='Wind Speed: ' + day4Windspeed;
+          windDay4.innerHTML='Wind: ' + day4Windspeed + ' mph';
           HumidDay4.innerHTML='Humidity: ' + day4Humidity + '%';
 
 //day 5
@@ -210,9 +210,9 @@ function getForecast(weatherData){
         let iconUrl5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
          
         $("#date5").text(today.add(4, 'days').format("MMM Do, YYYY"));   
-        tempDay5.innerHTML='Temp: ' + day5Temperature;
+        tempDay5.innerHTML='Temp: ' + day5Temperature + ' Celsuis';
           cityIcon5.setAttribute("src", iconUrl5);
-          windDay5.innerHTML='Wind Speed: ' + day5Windspeed;
+          windDay5.innerHTML='Wind: ' + day5Windspeed + ' mph';
           HumidDay5.innerHTML='Humidity: ' + day5Humidity + '%';
     })
 }
@@ -226,70 +226,7 @@ function showCityNameHistory(){
             button.innerText = localStorage.getItem(localStorage.key(i));
             button.classList.add('btn');
             cityHistory.appendChild(button);
-
          
-            // button.addEventListener('click', displayForcast);
-
-            // button.addEventListener('click', function(){
-            //     cityName.value = localStorage.getItem(localStorage.key(i)).trim();
-                
-                
-            
-
-            // })
+            // button.addEventListener('click', displayForcast);   
         }
     }
-
-
-
-
-
-
-
-
-//  function showQuestion(question) {
-//     questionElement.innerText = question.question;
-//     question.answers.forEach(answer => {
-//       const button = document.createElement('button')
-//       button.innerText = answer.text
-//       button.classList.add('btn');
-//       if (answer.correct) {
-//         button.dataset.correct = answer.correct;
-//       }
-//       button.addEventListener('click', selectAnswer);
-//       answerButtonsElement.appendChild(button);
-//     })
-//   }
-
-
-// Write to
-
-
-
-
-
-
-
-// let getWeather = function (city) {
-//     var queryURL  = 'https://api.openweathermap.org/data/2.5/forecast?q='+cityName+'&appid='+apiKey;
-  
-//     fetch(queryURL)
-//       .then(function (response) {
-//         if (response.ok) {
-//           console.log(response);
-//           response.json().then(function (data) {
-//             console.log(data);
-//             displayWeather(data, city);
-//           });
-//         } else {
-//           alert('Error: ' + response.statusText);
-//         }
-//       })
-//       .catch(function (error) {
-//         alert('Unable to connect to OpenWeather');
-//       });
-//   };
-
-//   let displayWeather = function( weather, searchTerm){
-
-//
