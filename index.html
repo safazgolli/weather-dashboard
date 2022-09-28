@@ -18,7 +18,7 @@
         <h1 class="text-white font-weight-bolder"> Weather Dashboard</h1>
 
     </header>
-    <div class="container-fluid ">
+    <div class="container ">
         <div class="row">
             <div class="col-4 bg-light">
                 <p class="search-header my-1 font-weight-bolder fs-2">Search for a city</p>
@@ -40,11 +40,11 @@
                 <div class="row mr-0">
                     <div class="col-12 border border-dark m-3 rounded">
                         <div class="row">
-                            <div class="col-12">
-                                <span id="city-name" class="city-name align-middle"></span>
-                                
+                            <div class="col-12 btn-grid">
+                                <span id="city-name" class="city-name align-middle">   </span>
+                                <div><img id="icn" src="" class="rounded float-left width-80px height-80px"></div>
                                 <p id="temp-container"></p>
-                                <img id="icn" src="" class="rounded mx-auto d-block image-size">
+                                
                                 <p id="wind"></p>
                                 <p id="humidity"></p>
 
@@ -79,87 +79,91 @@
                         <h3>5-Day Forecast</h3>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row container ">
                     <div class="card-deck">
                         <div class="card  bg-dark text-white" id="day1">
                         
                           <div class="card-body-1">
-                            <img id="icn1" src="" class="rounded float-right">
+                            
                             <div id="date1"></div>
                             <ul>
                                 
                                 <li id="temp1"></li>
-                                <!-- <li id="discr1"></li> -->
+                             
                                 <li id="wind1"></li>
                                 <li id="humidity1"></li>
 
                             </ul>
                           </div>
+                          <img id="icn1" src="" class="rounded float-right">
                         </div>
                         <div class="card bg-dark text-white" id="day2">
                           
                           <div class="card-body-2">
-                            <img id="icn2" src="" class="rounded float-right">
+                            
                             <div id="date2"></div>
                             <ul>
                                 
                                 <li id="temp2"></li>
-                                <!-- <li id="discr2"></li> -->
+                              
                                 <li id="wind2"></li>
                                 <li id="humidity2"></li>
 
                             </ul>
                             
                           </div>
+                          <img id="icn2" src="" class="rounded float-right">
                         </div>
                         <div class="card bg-dark text-white" id="day3">
         
                           <div class="card-body-3">
-                            <img id="icn3" src="" class="rounded float-right" >
+                             
                             <div id="date3"></div>
                             <ul>
                                 <li id="temp3"></li>
-                                <!-- <li id="discr3"></li> -->
+                              
                                 <li id="wind3"></li>
                                 <li id="humidity3"></li>
 
                             </ul>
                             
                           </div>
+                          <img id="icn3" src="" class="rounded float-right" >
                         </div>
                         <div class="card bg-dark text-white" id="day4">
                             
         
                             <div class="card-body-4">
-                                <img id="icn4" src="" class="rounded float-right">
+                                
                                 <div id="date4"></div>
                                 <ul>
                                     <li id="temp4"></li>
-                                    <!-- <li id="discr4"></li> -->
+                                    
                                     <li id="wind4"></li>
                                     <li id="humidity4"></li>
     
                                 </ul>
                             </div>
-                          
+                            <img id="icn4" src="" class="rounded float-right">
                       </div>
                       <div class="card bg-dark text-white" id = "day5">
                         
         
                         <div class="card-body-5 ">
-                            <img id="icn5" src="" class="rounded float-right">
+                         
                             <div id="date5"></div>
                             
                             <ul>
                                 <li id="temp5"></li>
-                                <!-- <li id="discr5"></li> -->
+                                
                                 <li id="wind5"></li>
                                 <li id="humidity5"></li>
 
                             </ul>
-                         
+                           </div> 
+                           <img id="icn5" src="" class="rounded float-right">
                         </div>
-                      
+                        
                   </div>
                 </div>
             </div>

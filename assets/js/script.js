@@ -20,22 +20,28 @@ let today= moment();
 var tempDay1 = document.querySelector('#temp1');
 var windDay1 = document.querySelector('#wind1');
 var HumidDay1 = document.querySelector('#humidity1');
+let day1Date = document.querySelector('#date1')
+
 // global variable for day 2 forecast 
 var tempDay2 = document.querySelector('#temp2');
 var windDay2 = document.querySelector('#wind2');
 var HumidDay2 = document.querySelector('#humidity2');
+let day2Date = document.querySelector('#date2')
 // global variable for day 3 forecast 
 var tempDay3 = document.querySelector('#temp3');
 var windDay3 = document.querySelector('#wind3');
 var HumidDay3 = document.querySelector('#humidity3');
+let day3Date = document.querySelector('#date3')
 // global variable for day 4 forecast 
-var tempDay4 = document.querySelector('#temp4');
-var windDay4 = document.querySelector('#wind4');
-var HumidDay4 = document.querySelector('#humidity4');
+let  tempDay4 = document.querySelector('#temp4');
+let  windDay4 = document.querySelector('#wind4');
+let HumidDay4 = document.querySelector('#humidity4');
+let day4Date = document.querySelector('#date4')
 // global variable for day 5 forecast 
-var tempDay5 = document.querySelector('#temp5');
-var windDay5 = document.querySelector('#wind5');
-var HumidDay5 = document.querySelector('#humidity5');
+let tempDay5 = document.querySelector('#temp5');
+let windDay5 = document.querySelector('#wind5');
+let HumidDay5 = document.querySelector('#humidity5');
+let day5Date = document.querySelector('#date5')
 
 localStorage.clear();
 
@@ -76,9 +82,10 @@ function displayForcast() {
             
             citySearch.innerHTML = citynameValue + '(' + dateTimeString + ')';
             cityIcon.setAttribute("src", iconUrl);
-            displayCityWth.innerHTML = 'Temp: ' + tempValue + ' Celsius';
+            
+            displayCityWth.innerHTML = 'Temp: ' + tempValue + '  °C';
           
-            displayWind.innerHTML = 'Wind speed: ' + windValue + ' mph' ;
+            displayWind.innerHTML = 'Wind speed: ' + windValue + ' MPH' ;
             displayHumid.innerHTML = 'Humidity: ' + humid + '%';
            
              if (localStorage.getItem(citynameValue) == null){
@@ -155,11 +162,14 @@ function getForecast(weatherData){
         let day1Humidity = dailyWeather[0][4].main.humidity;
          let icon1 = dailyWeather[0][4].weather[0].icon;
          let iconUrl1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
+         let unixTimeDay1 = dailyWeather[4][0]['dt'];
+         let dateTimeString1= moment.unix(unixTimeDay1).format("DD-MM-YYYY");
+         day1Date.innerHTML= dateTimeString1;  
          
-          $("#date1").text(today.format("MMM Do, YYYY"));
-          tempDay1.innerHTML='Temp: ' + day1Temperature + ' Celsuis';
+          
+          tempDay1.innerHTML='Temp: ' + day1Temperature + '°C';
            cityIcon1.setAttribute("src", iconUrl1);
-          windDay1.innerHTML='Wind: ' + day1Windspeed + ' mph';
+          windDay1.innerHTML='Wind: ' + day1Windspeed + 'MPH';
           HumidDay1.innerHTML='Humidity: ' + day1Humidity + '%';
 // day 2 
 
@@ -168,11 +178,14 @@ function getForecast(weatherData){
         let day2Humidity = dailyWeather[1][4].main.humidity;
         let icon2 = dailyWeather[1][4].weather[0].icon;
          let iconUrl2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
+         let unixTimeDay2 = dailyWeather[1][4]['dt'];
+         let dateTimeString2= moment.unix(unixTimeDay2).format("DD-MM-YYYY");
+         day2Date.innerHTML= dateTimeString2;  
           
-         $("#date2").text(today.add(1, 'days').format("MMM Do, YYYY")); 
-         tempDay2.innerHTML='Temp: ' + day2Temperature + ' Celsuis';
+  
+         tempDay2.innerHTML='Temp: ' + day2Temperature + '°C';
           cityIcon2.setAttribute("src", iconUrl2);
-          windDay2.innerHTML='Wind: ' + day2Windspeed + ' mph';
+          windDay2.innerHTML='Wind: ' + day2Windspeed + 'MPH';
           HumidDay2.innerHTML='Humidity: ' + day2Humidity + '%';
 
 // day 3
@@ -181,11 +194,14 @@ function getForecast(weatherData){
         let day3Humidity = dailyWeather[2][4].main.humidity;
         let icon3 = dailyWeather[2][4].weather[0].icon;
         let iconUrl3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
+        let unixTimeDay3 = dailyWeather[2][4]['dt'];
+        let dateTimeString3= moment.unix(unixTimeDay3).format("DD-MM-YYYY");
+        day3Date.innerHTML= dateTimeString3;  
         
-        $("#date3").text(today.add(2, 'days').format("MMM Do, YYYY"));   
-        tempDay3.innerHTML='Temp: ' + day3Temperature + ' Celsuis';
+        
+        tempDay3.innerHTML='Temp: ' + day3Temperature + '°C';
           cityIcon3.setAttribute("src", iconUrl3);
-          windDay3.innerHTML='Wind: ' + day3Windspeed + ' mph';
+          windDay3.innerHTML='Wind: ' + day3Windspeed + 'MPH';
           HumidDay3.innerHTML='Humidity: ' + day3Humidity + '%';
 
 //day 4
@@ -194,25 +210,29 @@ function getForecast(weatherData){
       let day4Humidity = dailyWeather[3][4].main.humidity;
       let icon4 = dailyWeather[3][4].weather[0].icon;
       let iconUrl4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+      let unixTimeDay4 = dailyWeather[3][4]['dt'];
+         let dateTimeString4= moment.unix(unixTimeDay4).format("DD-MM-YYYY");
+         day4Date.innerHTML= dateTimeString4;   
         
-      $("#date4").text(today.add(3, 'days').format("MMM Do, YYYY"));     
-      tempDay4.innerHTML='Temp: ' + day4Temperature + ' Celsuis';
+        
+      tempDay4.innerHTML='Temp: ' + day4Temperature + '°C';
           cityIcon4.setAttribute("src", iconUrl4);
-          windDay4.innerHTML='Wind: ' + day4Windspeed + ' mph';
+          windDay4.innerHTML='Wind: ' + day4Windspeed + 'MPH';
           HumidDay4.innerHTML='Humidity: ' + day4Humidity + '%';
 
-//day 5
+//day 5 forcast display
 
         let day5Temperature = dailyWeather[4][0].main.temp;
         let day5Windspeed = dailyWeather[4][0].wind.speed;
         let day5Humidity = dailyWeather[4][0].main.humidity;
         let icon5 = dailyWeather[4][0].weather[0].icon;
         let iconUrl5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
-         
-        $("#date5").text(today.add(4, 'days').format("MMM Do, YYYY"));   
-        tempDay5.innerHTML='Temp: ' + day5Temperature + ' Celsuis';
+        let unixTimeDay5 = dailyWeather[4][0]['dt'];
+         let dateTimeString= moment.unix(unixTimeDay5).format("DD-MM-YYYY");
+         day5Date.innerHTML= dateTimeString;   
+        tempDay5.innerHTML='Temp: ' + day5Temperature + '°C';
           cityIcon5.setAttribute("src", iconUrl5);
-          windDay5.innerHTML='Wind: ' + day5Windspeed + ' mph';
+          windDay5.innerHTML='Wind: ' + day5Windspeed + 'MPH';
           HumidDay5.innerHTML='Humidity: ' + day5Humidity + '%';
     })
 }
