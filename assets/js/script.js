@@ -14,23 +14,23 @@ let cityIcon3 = document.querySelector('#icn3');
 let cityIcon4 = document.querySelector('#icn4');
 let cityIcon5 = document.querySelector('#icn5');
 
-let today= moment();
+
 
 // global variable for day 1 forecast 
-var tempDay1 = document.querySelector('#temp1');
-var windDay1 = document.querySelector('#wind1');
-var HumidDay1 = document.querySelector('#humidity1');
+let tempDay1 = document.querySelector('#temp1');
+let windDay1 = document.querySelector('#wind1');
+let HumidDay1 = document.querySelector('#humidity1');
 let day1Date = document.querySelector('#date1')
 
 // global variable for day 2 forecast 
-var tempDay2 = document.querySelector('#temp2');
-var windDay2 = document.querySelector('#wind2');
-var HumidDay2 = document.querySelector('#humidity2');
+let tempDay2 = document.querySelector('#temp2');
+let windDay2 = document.querySelector('#wind2');
+let HumidDay2 = document.querySelector('#humidity2');
 let day2Date = document.querySelector('#date2')
 // global variable for day 3 forecast 
-var tempDay3 = document.querySelector('#temp3');
-var windDay3 = document.querySelector('#wind3');
-var HumidDay3 = document.querySelector('#humidity3');
+let tempDay3 = document.querySelector('#temp3');
+let windDay3 = document.querySelector('#wind3');
+let HumidDay3 = document.querySelector('#humidity3');
 let day3Date = document.querySelector('#date3')
 // global variable for day 4 forecast 
 let  tempDay4 = document.querySelector('#temp4');
@@ -82,7 +82,7 @@ function displayForcast() {
             
             citySearch.innerHTML = citynameValue + '(' + dateTimeString + ')';
             cityIcon.setAttribute("src", iconUrl);
-            
+
             displayCityWth.innerHTML = 'Temp: ' + tempValue + '  °C';
           
             displayWind.innerHTML = 'Wind speed: ' + windValue + ' MPH' ;
